@@ -4,6 +4,7 @@ def encode(message, key):
     message = list(message)
     for i in range(len(message)):
         message[i] = str((ord(message[i]) - 96) + (int(key[i % len(key)])))
+        #message[i] = str(chr((ord(message[i])) + (int(key[i % len(key)]))))
     return " ".join(message)
 #decoding the message with a specific key
 def decode(message, key):
@@ -16,6 +17,6 @@ def decode(message, key):
     return "".join(message)
 
 
-string = encode("Hello World",1231)
+#string = encode("Hello World",1231)
 
-print(decode(string,1231))
+#print(decode(string,1231))
