@@ -24,6 +24,7 @@ while True:
         # then we'd access the file itself 
         if values['-IN-'][0] == '/':
             f = open(values['-IN-'], 'r')
+            #change the write path to any other write path (only works with Linux)
             writefile = open("/home/abdulrahman/Desktop/test.txt",'w')
             fread = f.read()
             f.close()
@@ -46,8 +47,5 @@ while True:
         print('You entered ', convertedVal)
         #window['-OUTPUT-'].update(convertedVal)
         window['-OUT'].update(convertedVal)
-    
-    if event == 'Go to Google Maps': 
-        DMSConverter.GMapsRoute(convertedVal)
 
 window.close()
