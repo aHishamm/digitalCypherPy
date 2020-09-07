@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 import digitalcypher
+import os 
 sg.theme('Purple')
 layout = [  [sg.Text('Please enter the string to be encoded/decoded and the key: ')],
             #[sg.InputText(k='-IN-')],
@@ -22,10 +23,14 @@ while True:
         # add a conditional that checks the first letter of the string 
         # if the first letter of the string is / (basically a path)
         # then we'd access the file itself 
-        if values['-IN-'][0] == '/':
+        if values['-IN-'][0] == '/' or values['-IN-'][0] == 'C:\\':
             f = open(values['-IN-'], 'r')
+            #check if system is windows 
+            if os.name == 'nt':
+                writefile = open("C:\\Users\\cole1\\Desktop\\tester.txt",'w')
             #change the write path to any other write path (only works with Linux)
-            writefile = open("/home/abdulrahman/Desktop/test.txt",'w')
+            else:
+                writefile = open("/home/abdulrahman/Desktop/test.txt",'w')
             fread = f.read()
             f.close()
             print(fread)
