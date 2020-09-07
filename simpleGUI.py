@@ -23,11 +23,11 @@ while True:
         # add a conditional that checks the first letter of the string 
         # if the first letter of the string is / (basically a path)
         # then we'd access the file itself 
-        if values['-IN-'][0] == '/' or values['-IN-'][0] == 'C:\\':
+        if values['-IN-'][0] == '/' or values['-IN-'][0] == 'C:':
             f = open(values['-IN-'], 'r')
             #check if system is windows 
             if os.name == 'nt':
-                writefile = open("C:\\Users\\cole1\\Desktop\\tester.txt",'w')
+                writefile = open("C:/Users/cole1/Desktop/testering.txt",'w+')
             #change the write path to any other write path (only works with Linux)
             else:
                 writefile = open("/home/abdulrahman/Desktop/test.txt",'w')
